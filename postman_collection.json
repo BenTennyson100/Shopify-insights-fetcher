@@ -1,0 +1,286 @@
+{
+  "info": {
+    "name": "Shopify Store Insights Fetcher",
+    "description": "API collection for testing Shopify store analysis endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/health",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "health"
+          ]
+        },
+        "description": "Check API health and service status"
+      },
+      "response": []
+    },
+    {
+      "name": "Root Endpoint",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            ""
+          ]
+        },
+        "description": "Basic API information"
+      },
+      "response": []
+    },
+    {
+      "name": "Supported Features",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/supported-features",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "supported-features"
+          ]
+        },
+        "description": "Get list of supported features and their availability"
+      },
+      "response": []
+    },
+    {
+      "name": "Analyze ColourPop Store",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"website_url\": \"https://colourpop.com\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/analyze",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "analyze"
+          ]
+        },
+        "description": "Analyze ColourPop cosmetics store"
+      },
+      "response": []
+    },
+    {
+      "name": "Analyze Memy Store",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"website_url\": \"https://memy.co.in\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/analyze",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "analyze"
+          ]
+        },
+        "description": "Analyze Memy clothing store"
+      },
+      "response": []
+    },
+    {
+      "name": "Analyze Hair Originals Store",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"website_url\": \"https://hairoriginals.com\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/analyze",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "analyze"
+          ]
+        },
+        "description": "Analyze Hair Originals store"
+      },
+      "response": []
+    },
+    {
+      "name": "Test Invalid URL (Non-Shopify)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"website_url\": \"https://google.com\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/analyze",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "analyze"
+          ]
+        },
+        "description": "Test with a non-Shopify URL to verify error handling"
+      },
+      "response": []
+    },
+    {
+      "name": "Test Invalid URL Format",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"website_url\": \"invalid-url\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/analyze",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "analyze"
+          ]
+        },
+        "description": "Test with invalid URL format to verify validation"
+      },
+      "response": []
+    },
+    {
+      "name": "Competitor Analysis - ColourPop",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"website_url\": \"https://colourpop.com\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/analyze-with-competitors",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "analyze-with-competitors"
+          ]
+        },
+        "description": "Analyze ColourPop with competitor analysis (bonus feature)"
+      },
+      "response": []
+    },
+    {
+      "name": "Test Fashion Nova Store",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"website_url\": \"https://fashionnova.com\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/analyze",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "analyze"
+          ]
+        },
+        "description": "Analyze Fashion Nova store"
+      },
+      "response": []
+    },
+    {
+      "name": "Test Gymshark Store",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"website_url\": \"https://gymshark.com\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/analyze",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "analyze"
+          ]
+        },
+        "description": "Analyze Gymshark athletic wear store"
+      },
+      "response": []
+    }
+  ]
+}
